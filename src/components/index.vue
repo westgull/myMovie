@@ -61,7 +61,7 @@
                         </div>
                     </div>
                 </li>
-                <li class="clearfix">
+                <li class="clearfix"  @click.prevent="goDetail(26266893)">
                     <a class="list-imgs" href="#">
                         <img class="img" src="http://image11.m1905.cn/uploadfile/2019/0208/thumb_1_320_174_20190208021755258444.jpg" data-original="http://image11.m1905.cn/uploadfile/2019/0208/thumb_1_320_174_20190208021755258444.jpg" width="320" height="174" alt="独家解析《流浪地球》中国表达带给科幻的独特情怀" style="display: inline;">
                     </a>
