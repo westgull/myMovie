@@ -4,6 +4,7 @@ import index from '@/components/index'
 import details from '@/components/details'
 import template from '@/components/template'
 import diagram from '@/components/diagram'
+import top250 from '@/components/top250'
 
 Vue.use(Router)
 
@@ -31,7 +32,7 @@ export default new Router({
     },
     {
       path: '/top250',
-      component: template
+      component: top250
     },
     {
       path: '/search',

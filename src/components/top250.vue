@@ -7,21 +7,22 @@
                     <p class="board-content">榜单规则：将电影库中的经典影片，按照评分和评分人数从高到低综合排序取前250名。相关数据来源于“豆瓣电影库”。</p>
                 </div>
             </div>
-            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3" v-for="movie in movies.subjects">
-                <router-link :to="{path:'/details',query:{id:movie.id}}">
-                    <div class="thumbnail">
-                        <!-- <img :src="'https://images.weserv.nl/?url='+movie.images.large" :alt="movie.title"> -->
-                        <img :src="movie.images.large" :alt="movie.title">
-                        <div class="caption">
-                            <h5>{{movie.title}} <span class="badge">{{movie.rating.average}}分</span></h5>
-                            <div class="sort">
-                                <span v-for="info in movie.genres" @click.prevent="toSearch(info)" class="label label-primary">{{info}}</span>
+            <ul>
+                <li v-for="movie in movies.subjects" class="top-list">
+                    <router-link :to="{path:'/details',query:{id:movie.id}}">
+                        <div class="thumbnail">
+                            <!-- <img :src="'https://images.weserv.nl/?url='+movie.images.large" :alt="movie.title"> -->
+                            <img :src="movie.images.large" :alt="movie.title">
+                            <div class="caption">
+                                <h5>{{movie.title}} <span class="badge">{{movie.rating.average}}分</span></h5>
+                                <div class="sort">
+                                    <span v-for="info in movie.genres" @click.prevent="toSearch(info)" class="label label-primary">{{info}}</span>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </router-link>
-            </div>
-
+                    </router-link>
+                </li>
+            </ul>
         </div>
         <nav class="clearfix" v-show="!loading">
             <el-pagination
@@ -108,7 +109,12 @@
     .thumbnail{
         transition: all .5s ease;
         position: relative;
-
+        display: inline-block;
+        width: 160px;
+        height: 220px;
+        margin-left: 80px;
+        position: relative;
+        float: left;
     }
     .thumbnail:hover {
         transform: translate(2px,-2px);
@@ -184,6 +190,12 @@
     }
     .row-top {
         margin-bottom: 20px;
+    }
+    .top-list {
+        margin-bottom: 30px;
+        font-size: 0;
+        position: relative;
+        overflow: hidden;
     }
 
     @-webkit-keyframes rotate_pacman_half_up {
