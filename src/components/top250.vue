@@ -2,10 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="row-top">
-                <div v-if="$route.fullPath.indexOf('top250')==1">
-                    <p class="update-time">2019-03-12<span class="has-fresh-text">已更新</span></p>
-                    <p class="board-content">榜单规则：将电影库中的经典影片，按照评分和评分人数从高到低综合排序取前250名。相关数据来源于“豆瓣电影库”。</p>
-                </div>
+                <p class="board-content">榜单规则：将电影库中的经典影片，按照评分和评分人数从高到低综合排序取前250名。相关数据来源于“豆瓣电影库”。</p>
             </div>
             <ul class="top-ul">
                 <li v-for="movie in movies.subjects" class="top-list">
