@@ -1,6 +1,6 @@
 # mymovie
 
-> A Vue.js project
+> 简单的电影推荐类网站，结合Vue2.0和element-ui，并加入了可视化图表
 
 ## Build Setup
 
