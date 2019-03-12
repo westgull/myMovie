@@ -2,7 +2,7 @@
         <div class="movie-chart container">
             <div id="myEchart" style="width: 90%;margin:0 auto;height: 600px;border: 1px solid #ddd;padding:4px;"></div>
             <div id="myEchart3" style="width: 90%;margin:0 auto;height: 500px;border: 1px solid #ddd;padding:4px;margin-top:10px"></div>
-            <div id="myEchart2" style="width: 90%;height: 600px;margin:0 auto;border: 1px solid #ddd;padding:4px;margin-top:10px"></div>
+            <div id="myEchart2" style="width: 90%;height: 500px;margin:0 auto;border: 1px solid #ddd;padding:4px;margin-top:10px"></div>
 
         </div>
 </template>
@@ -17,7 +17,6 @@ export default {
         methods: {
              drawPie(id){
                this.charts = echarts.init(document.getElementById(id))
-               var myColor = ['#333', '#333', '#333', '#333', '#333', '#333', '#333', '#333', '#333', '#333'];
                this.charts.setOption({
                    title: {
                         text: '各类型电影票房比较',
@@ -79,7 +78,7 @@ export default {
                                     show: true,
                                     position: 'right',
                                     textStyle: {
-                                        color: 'grey',
+                                        color: '#808000',
                                         fontSize: '12',
                                     }
                                 }
@@ -87,10 +86,7 @@ export default {
                             barWidth: 6,
                             itemStyle: {
                                 normal: {
-                                    color: function(params) {
-                                        var num = myColor.length;
-                                        return myColor[params.dataIndex % num]
-                                    },
+                                    color: '#556B2F'
                                 }
                             },
                             z: 2
@@ -117,10 +113,7 @@ export default {
                             barWidth: 24,
                             itemStyle: {
                                 normal: {
-                                    color: function(params) {
-                                        var num = myColor.length;
-                                        return myColor[params.dataIndex % num]
-                                    },
+                                    color: '#696969',
                                     barBorderRadius: 5,
                                 }
                             },
@@ -135,10 +128,7 @@ export default {
                             symbolSize: 20,
                             itemStyle: {
                                 normal: {
-                                    color: function(params) {
-                                        var num = myColor.length;
-                                        return myColor[params.dataIndex % num]
-                                    },
+                                    color:'#556B2F',
                                     opacity: .8,
                                 }
                             },
@@ -181,7 +171,6 @@ export default {
                     [52,24,60,1.03,50,21,30],
                     [46,5,49,0.28,10,6,31]
                 ];
-
                 var dataGZ = [
                     [26,37,27,1.163,27,13,1],
                     [85,62,71,1.195,60,8,2],
@@ -215,7 +204,6 @@ export default {
                     [106,116,188,3.628,101,16,30],
                     [118,50,0,1.383,76,11,31]
                 ];
-
                 var lineStyle = {
                     normal: {
                         width: 1,
@@ -286,7 +274,7 @@ export default {
                             symbol: 'none',
                             itemStyle: {
                                 normal: {
-                                   color: 'black'
+                                   color: '	#D2691E'
                                 }
                             },
                             areaStyle: {
@@ -303,7 +291,7 @@ export default {
                             symbol: 'none',
                             itemStyle: {
                                 normal: {
-                                   color: '#515151'
+                                   color: '	#CD5C5C'
                                 }
                             },
                             areaStyle: {
@@ -374,9 +362,9 @@ export default {
                             },
                             itemStyle: {
                                 normal: {
-                                    color: '#ccc',
+                                    color: '#5F9EA0',
                                     shadowBlur: 200,
-                                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+                                    shadowColor: 'rgba(0,139,139, 0.5)'
                                 }
                             }
                         }

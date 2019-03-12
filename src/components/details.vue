@@ -33,6 +33,13 @@
             </div>
             <h3>剧情简介:</h3>
             <p style="color:#676767">{{movie.summary}}</p>
+            <h3>绿皮书的演职员:</h3>
+            <div class="row actors">
+                <div class="actor-item"  v-for="item in movie.casts">
+                    <img :src="item.avatars.small" style="width:100px;border: 1px solid #ddd;border-radius: 4px;padding:5px"/>
+                    <p>{{item.name}}</p>
+                </div>
+            </div>
         </div>
         <div class="mask" v-show="loading">
             <div class="loader">
@@ -102,11 +109,21 @@
     .dti-w {
         float: left;
         margin-left: 15px;
+        width:calc(100% - 250px)
     }
     .dti-w p {
         margin: 20px 0;
+        overflow:hidden;
+        text-overflow:ellipsis;
+        white-space:nowrap
     }
-
+    .actors {
+        margin: 0 10px;
+    }
+    .actor-item {
+        float:left;
+        margin-right: 20px;
+    }
     .mask {
         position: fixed;
         top: 50px;
