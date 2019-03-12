@@ -7,18 +7,19 @@
                     <p class="board-content">榜单规则：将电影库中的经典影片，按照评分和评分人数从高到低综合排序取前250名。相关数据来源于“豆瓣电影库”。</p>
                 </div>
             </div>
-            <ul>
+            <ul class="top-ul">
                 <li v-for="movie in movies.subjects" class="top-list">
                     <router-link :to="{path:'/details',query:{id:movie.id}}">
                         <div class="thumbnail">
-                            <!-- <img :src="'https://images.weserv.nl/?url='+movie.images.large" :alt="movie.title"> -->
                             <img :src="movie.images.large" :alt="movie.title">
-                            <div class="caption">
-                                <h5>{{movie.title}} <span class="badge">{{movie.rating.average}}分</span></h5>
-                                <div class="sort">
-                                    <span v-for="info in movie.genres" @click.prevent="toSearch(info)" class="label label-primary">{{info}}</span>
-                                </div>
+                        </div>
+                        <div class="board-item-main">
+                            <div class="movie-item-info">
+                                <p class="name">{{movie.title}}</p>
+                                <p class="star">主演：<span v-for="(item,index) in movie.casts">{{item.name}}<i v-if="(index+1) != movie.casts.length">,</i></span></p>
+                                <p class="releasetime">上映时间：1993-01-01</p>    
                             </div>
+                            <p class="score-num">{{movie.rating.average}}</p>
                         </div>
                     </router-link>
                 </li>
@@ -111,8 +112,7 @@
         position: relative;
         display: inline-block;
         width: 160px;
-        height: 220px;
-        margin-left: 80px;
+        margin-left: 50px;
         position: relative;
         float: left;
     }
@@ -124,6 +124,55 @@
         width: 100%;
         max-height: 380px;
         cursor: pointer;
+    }
+    .board-item-main {
+        position: relative;
+        display: inline-block;
+        width: calc(100% - 280px);
+        height: 219px;
+        float: right;
+        margin-top: 30px;
+        border-bottom: 1px solid #e5e5e5;
+    }
+    .score-num {
+        position: absolute;
+        right: 10px;
+        top: 20px;
+        color: #ffb400;
+        font-size: 56px;
+        font-weight: 700;
+        font-style: italic;
+    }
+    .movie-item-info {
+        float: left;
+    }
+    .movie-item-info {
+        width: 420px;
+        vertical-align: middle;
+    }
+    .name {
+        font-size: 26px;
+        color: #333;
+        width: 420px;
+        display: block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    .star {
+        margin-top: 18px;
+        color: #333;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    .releasetime {
+        margin-top: 8px;
+        color: #999;
+    }
+    .movie-item-info, .movie-item-number {
+        display: inline-block;
+        font-size: 16px;
     }
     h5{
         width: 70%;
@@ -137,26 +186,6 @@
         position: absolute;
         bottom: 15px;
         left: 5px;
-    }
-    @media screen and (min-width: 1170px){
-        .thumbnail{
-            height: 458px;
-        }
-    }
-    @media screen and (min-width: 992px) and (max-width: 1169px){
-        .thumbnail{
-            height: 392px;
-        }
-    }
-    @media screen and (min-width: 768px) and (max-width: 991px){
-        .thumbnail{
-            height: 400px;
-        }
-    }
-    @media screen and (max-width: 767px){
-        .sort{
-            position: static;
-        }
     }
     .mask {
         position: fixed;
@@ -190,6 +219,10 @@
     }
     .row-top {
         margin-bottom: 20px;
+    }
+    .top-ul {
+        width: 85%;
+        margin: 0 auto;
     }
     .top-list {
         margin-bottom: 30px;
