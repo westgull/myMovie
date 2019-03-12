@@ -7,8 +7,8 @@ import VueResource from 'vue-resource'
 import $ from 'jquery'
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import '../node_modules/bootstrap/dist/js/bootstrap.min.js'
-import ElementUI from 'element-ui';
-import 'element-ui/lib/theme-chalk/index.css';
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
 
 Vue.use(VueResource)
 Vue.use(ElementUI)
