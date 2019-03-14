@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="row-top">
-                <p class="board-content">榜单规则：将电影库中的经典影片，按照评分和评分人数从高到低综合排序取前250名。相关数据来源于“豆瓣电影库”。</p>
+                <p class="board-content">榜单规则：电影库中的经典影片，按照评分和评分人数从高到低综合排序取前250名。相关数据来源于“豆瓣电影库”。</p>
             </div>
             <ul class="top-ul">
                 <li v-for="movie in movies.subjects" class="top-list">

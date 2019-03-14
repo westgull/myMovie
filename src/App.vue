@@ -59,4 +59,12 @@ export default {
   text-align: center;
   color: #2c3e50;
 }
+.navbar-default .navbar-brand{
+    color: #27a;
+    font-weight: 600;
+}
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover{
+    color: #27a;
+}
+
 </style>
