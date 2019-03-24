@@ -24,6 +24,7 @@
                             <input type="text" class="form-control" placeholder="电影搜索" v-model="search">
                         </div>
                         <button type="submit" class="btn btn-default" @click="searchMovie">搜索</button>
+                        <router-link class="btn btn-info" to="/login">登录</router-link>
                     </form>
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
@@ -68,3 +69,8 @@ export default {
 }
 
 </style>
+<style scoped>
+    .login {
+    }
+</style>
+
